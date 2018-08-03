@@ -1,1 +1,1 @@
-Source from https://webkul.com/blog/
+Source HTML, CSS, JS from https://webkul.com/blog/. Thanks
