@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateUrl='indie.xml' b:templateVersion='1.1.1' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<meta content='blogger' name='generator'/>
+<meta content='text/html; charset=UTF-8' https-equiv='Content-Type'/>
+<title>Rút gọn, kiểm tra link </title>
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'/>
+<meta content=' Công cụ Rút gọn, kiểm tra link ' name='description'/>
+<meta content='Công cụ Rút gọn, kiểm tra link' name='keywords'/>
+<link href='https://vnlink.top/templates/default/default/css/bootstrap/css/bootstrap2.css' media='screen' rel='stylesheet' type='text/css'/>
+<link href='https://vnlink.top/templates/default/default/css/font-awesome/4.4.0/css/font-awesome.min.css' media='screen' rel='stylesheet' type='text/css'/>
+<link href='https://vnlink.top/templates/default/default/css/style.css?v=5' media='screen' rel='stylesheet' type='text/css'/>
+<script src='https://www.google.com/recaptcha/api.js'>
+</script>
+<style>
+    body {
+        background: #F0F0F0;
+        font-family: helvetica;
+        -webkit-font-smoothing: antialiased;
+    }
+</style>
+
+
+&lt;!--<style type='text/css'/>--&gt;
+<b:skin><![CDATA[
+*//*
+<!-- Variable definitions -->
+<Variable name="keycolor" description="Main color" type="color" default="#4267b2" value="#4267b2"/>
+<Variable name="startSide" description="Start side in blog language" type="automatic" default="left" hideEditor="true" />
+<Variable name="endSide" description="End side in blog language" type="automatic" default="right" hideEditor="true" />
+<Group description="Page Text">
+<Variable name="body.text.font" description="Font"
+type="font"
+default="15px Roboto, sans-serif" value="15px Roboto, sans-serif"/>
+<Variable name="body.text.color" description="Color"
+type="color"
+default="#333333" value="#333333"/>
+</Group>
+<Group description="Backgrounds">
+<Variable name="body.background.height" description="Background height"
+type="length"
+min="420px"
+max="640px"
+default="480px" value="480px"/>
+<Variable name="body.background" description="Background"
+color="#eeeeee"
+type="background"
+default="$(color) none repeat scroll top left" value="$(color) none repeat scroll top left"/>
+<Variable name="body.background.color" description="Body background color"
+type="color"
+default="#eee" value="#eeeeee"/>
+<Variable name="posts.background.color" description="Post background color"
+type="color"
+default="#fff" value="#ffffff"/>
+<Variable name="body.background.blur" description="Background blur"
+type="length"
+min="0px"
+max="50px"
+default="0px" value="0px"/>
+</Group>
+<Group description="Links">
+<Variable name="body.link.color" description="Link color"
+type="color"
+default="#4267b2" value="#4267b2"/>
+<Variable name="body.link.visited.color" description="Visited link color"
+type="color"
+default="#4267b2" value="#4267b2"/>
+<Variable name="body.link.hover.color" description="Link Hover color"
+type="color"
+default="#4267b2" value="#4267b2"/>
+</Group>
+<Group description="Tabs text" selector="div.widget.PageList">
+<Variable name="tabs.font" description="Font"
+type="font"
+family="Roboto, sans-serif"
+size="15px"
+default="700 normal $(size) $(family)" value="700 normal $(size) $(family)"/>
+<Variable name="tabs.color" description="Text color"
+type="color"
+default="#ccc" value="#cccccc"/>
+<Variable name="tabs.selected.color" description="Selected color"
+type="color"
+default="#fff" value="#ffffff"/>
+<Variable name="tabs.overflow.background.color" description="Popup background color"
+type="color"
+default="#f2f3f5" value="#f2f3f5"/>
+<Variable name="tabs.overflow.color" description="Popup text color"
+type="color"
+default="#333333" value="#333333"/>
+<Variable name="tabs.overflow.selected.color" description="Popup selected color"
+type="color"
+default="#212121" value="#212121"/>
+</Group>
+<Group description="Posts" selector="div.widget.Blog">
+<Variable name="posts.title.color" description="Post title color"
+type="color"
+default="#212121" value="#212121"/>
+<Variable name="posts.title.font" description="Post title font"
+type="font"
+default="bold 22px Roboto, sans-serif" value="bold 22px Roboto, sans-serif"/>
+<Variable name="posts.stream.title.font" description="Post title stream font"
+type="font"
+default="bold 30px Roboto, sans-serif" value="bold 30px Roboto, sans-serif"/>
+<Variable name="posts.text.font" description="Post text font"
+type="font"
+default="15px Roboto, sans-serif" value="15px Roboto, sans-serif"/>
+<Variable name="posts.text.color" description="Post text color"
+type="color"
+default="#333333" value="#333333"/>
+<Variable name="posts.byline.color" description="Post byline color"
+type="color"
+default="rgba(0, 0, 0, 0.54)" value="rgba(0, 0, 0, 0.54)"/>
+<Variable name="blockquote.font" description="Blockquote font"
+type="font"
+default="italic 300 15px Roboto, sans-serif" value="italic 300 15px Roboto, sans-serif"/>
+<Variable name="blockquote.color" description="Blockquote color"
+type="color"
+default="#444" value="#444444"/>
+<Variable name="posts.icons.color"
+description="Post icons color"
+type="color"
+default="#707070" value="#707070"/>
+</Group>
+<Group description="Author profile" selector='.widget.Profile'>
+<Variable name="profile.title.color" description="Profile title color"
+type="color"
+default="rgba(0,0,0,0.52)" value="rgba(0,0,0,0.52)"/>
+<Variable name="profile.text.color" description="Profile text color"
+type="color"
+default="rgba(0, 0, 0, 0.54)" value="rgba(0, 0, 0, 0.54)"/>
+<Variable name="profile.link.color" description="Profile link color"
+type="color"
+default="#212121" value="#212121"/>
+</Group>
+<Group description="Labels" selector=".widget.Label">
+<Variable name="labels.text.color"
+description="Label text color"
+type="color"
+default="#4267b2" value="#4267b2"/>
+<Variable name="labels.background.color"
+description="Label background color"
+type="color"
+red="0"
+green="0"
+blue="0"
+default="rgba($red, $green, $blue, 0.05)" value="rgba($red, $green, $blue, 0.05)"/>
+</Group>
+]]></b:skin>
+<b:template-skin><![CDATA[
+body#layout li {display:none}
+body#layout div.section{clear:both}
+body#layout{width:1080px}
+]]></b:template-skin>
+
+</head>
+<body>
+<div class='wrapper'>
+<style>
+.nav&gt;li&gt;a:active{text-decoration:none;background-color:#0f283e}.bg-light{background:#fff;padding:3px 0}
+</style>
+   <nav class='navbar navbar-light bg-light'>
+            <div class='container'>
+                <div class='navbar-header'>
+                    <button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-example-navbar-collapse-1' data-toggle='collapse' type='button'>
+                        <span class='sr-only'>Chia sẻ link, rút gọn link </span>
+                        <span class='icon-bar'/>
+                        <span class='icon-bar'/>
+                        <span class='icon-bar'/>
+                    </button>
+                    <a class='navbar-brand' href='/'>
+                      <img class='logo-cstn' src='https://vnlink.top/images/logo/logo.png'/>
+                    </a>
+                </div>
+
+                <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
+
+                </div>
+            </div>
+        </nav>
+<div class='content-wrapper'>
+            <section class='content'>
+                <div class='container' id='content-wrapper'>
+                    <div class='row'>
+
+                        <div class='col-md-12 col-xs-12' style='min-height:500px;'>
+
+                            <style>
+                                .title-name-tool {
+
+                                    font-size: 16px;
+                                    text-align: center;
+                                    padding: 3px;
+
+                                }
+                            </style>
+
+
+                            <center>
+                                <h1>Rút gọn link </h1>
+                            </center>
+
+
+
+                            <div class='row'>
+                                <center>
+                                    <form class='form-inline text-center' id='main-form' style='max-width:600px;padding:0px 10px;'>
+                                        <div class='form-group' style='width:80%;float:left;'>
+                                            <input class='form-control' id='url' name='url' placeholder='Nhập link cần rút gọn..' style='width: 100% !important;' type='text'/>
+                                        </div>
+                                        <div style='width:15%;float:left;'><button class='btn btn-default' type='submit'>Rút gọn</button>
+                                        </div>
+                                        <div class='clearfix'/>
+                                        <div class='form-group' style=''>
+											<script type='text/javascript'>
+                                            var e = location.href.split(&quot;?currentURL=&quot;)[1];
+											var a = location.href.split(&quot;?currentURL=&quot;);
+                                            if(a.length == 1){
+                                                document.write(&quot;<div class='g-recaptcha' data-callback='enableBtn' data-sitekey='6LeuC2gUAAAAAKdPEcOXClf4rl2UuzJE91LFceKh'/>&quot;);
+                                            }else if(a[1] == &#39;&#39; &amp;&amp; a.length == 2){
+												location.href= &#39;https://vnlinktop.blogspot.com/&#39;;
+											}
+                                            </script>	
+                                            
+                                        </div>
+                                        <div class='clearfix'/>
+                                    </form>
+                                </center>
+                            </div>
+
+
+                            <br/>
+                            <div style='max-width:600px; margin: 2px auto;'>
+                              <script type='text/javascript'>
+                                if(e){
+									document.write(&quot;<div class='alert alert-info' style=''><span>&quot;+e+&quot;</span><a class='btn btn-default' id='copy-compact-link'>Copy</a></div><input id='compact_link' name='compact_link' type='hidden' value='&quot;+e+&quot;'/>&quot;);
+								}
+								</script>
+                                <div class='text-center'>Link vừa tạo</div>
+                                <table class='table'>
+ 
+                                </table>
+                            </div>
+                            <div style='max-width:600px; margin:5px auto;'>
+                                <h1>Giới thiệu </h1>
+                                <div>Vnlink.top là tiện ích rút gọn link dành cho các webmater kiếm tiền online, muốn có link gọn và tránh được facebook cảnh báo spam với các hệ thống link rút gọn như 123link.co, hệ thống đang phát triển nhiều tính năng mới cho các bạn </div>
+
+                                <br/>
+                                <center><a href='https://123link.co/ref/vnlinktop?lang=vi_VN' target='_blank'><img src='//123link.pw/img/728x90.png' title='Rút gọn link kiếm tiền online uy tín nhất Việt Nam' width='100%'/></a></center>
+                                <br/>
+                                <center>
+                                    <!-- Start of banner code -->
+                                    <a href='https://mshare.io/ref/2' target='_blank'><img src='https://mshare.io/images/banner/referral/728x90-vi.png' title='Upload file, kiếm tiền online  - Mshare.io' width='100%'/></a>
+                                </center>
+                                <!-- End of banner code -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+<b:section class='main' id='main'/>
+ <style>
+.main-footer{color:#fff;background-color:#172a38;border-top:20px solid #18354a;font-family:helvetica;-webkit-font-smoothing:antialiased}.main-footer a{color:#ccc}.main-footer a:hover{color:#787878}.title-header-footer{font-size:15px;text-transform:uppercase;font-weight:700;text-align:center}.title-under{border-bottom:1px solid#ccc}.sub-footer{padding:3px;text-align:center}.footer-bottom{background:#0d2638;padding:10px;color:#fff;text-align:center}.footer-bottom a{color:#fff}
+</style>
+<footer/>
+    <div class='container text-center '>
+    	<span class='text-center '>Ads textlink:  <a href='https://karaokehay.net ' target='_blank '> Nhạc karaoke hay </a> </span> <span class='text-center '> | <a href='https://thiepmung.com ' target='_blank '> Tạo thiệp online </a>  </span>
+    </div>
+    <div class='footer-bottom '>
+        <div class='container '>
+            <span><a href='/ '>Vnlink.top </a> </span> - <span style='color:#ccc; '>Chia sẻ link, rút gọn link  |  Liên hệ mua textlink  email: <a href='mail:Email@gmail.com'>Email@gmail.com</a></span>	
+        </div>
+    </div>				
+</div>
+&lt;!--</body>--&gt;&lt;/body&gt;
+<script src='https://vnlink.top/templates/default/default/js/plugins/jQuery/jQuery-2.1.4.min.js' type='text/javascript'/>
+<script src='https://vnlink.top/templates/default/default/js/bootstrap/js/bootstrap.min.js' type='text/javascript'/>	
+<script type='text/javascript'>
+		$.fn.isOverflowed = function(){
+			var e = this[0];
+			return e.scrollHeight &gt; e.clientHeight || e.scrollWidth &gt; e.clientWidth;
+		};
+    </script>
+<script>
+$(document).ready(function() {
+	$(&#39;#copy-compact-link&#39;).click(function(){
+		copyTextToClipboard($(&#39;#compact_link&#39;).val(),$(this));
+	});
+	$(&#39;.copy-compact-link&#39;).click(function(){
+		copyTextToClipboard($(&#39;[name=&quot;compact_link_&#39; + $(this).data(&#39;id&#39;) + &#39;&quot;]&#39;).val(),$(this));
+	});
+});
+var enable_btn = false;
+var enableBtn = function (){
+	enable_btn = true;
+}
+var readList = new Array();
+var readCount = 0;
+if (localStorage.getItem(&quot;ListSaved&quot;) != undefined || localStorage.getItem(&quot;ListSaved&quot;) != null) {
+    readList = JSON.parse(localStorage.getItem(&quot;ListSaved&quot;));
+}
+if (localStorage.getItem(&quot;saveCount&quot;) != undefined || localStorage.getItem(&quot;saveCount&quot;) != null) {
+    readCount = localStorage.getItem(&quot;saveCount&quot;);
+}
+// render list
+item = &#39;&#39;;
+for (i = readList.length-1; i &gt;= 0 ; --i) {
+    item = item + &quot;<tr><td>&quot;+readList[i].longUrl+&quot;</td><td>&quot;+readList[i].url+&quot;</td><td><input name='compact_link_&quot;+i+&quot;' type='hidden' value='&quot;+readList[i].url+&quot;'/><a class='btn btn-default copy-compact-link' data-id='&quot;+i+&quot;'>Copy</a></td></tr>&quot;;
+}
+$(&quot;.table&quot;).html(item);
+$(&#39;#main-form&#39;).on(&quot;submit&quot;, function() {
+    	if(!enable_btn){
+    		alert(&#39;Bạn vui lòng xác nhận captcha trước.&#39;)
+			return false;
+        }else{
+			if(grecaptcha.getResponse() == &quot;&quot;) {
+              alert(&quot;Khong Thể xác nhận!&quot;);
+            } else {
+              var login = &quot;o_7vd5uc9db7&quot;;
+              var api_key = &quot;R_56f43c92a24d44f690b5bcdf3e430ed6&quot;;
+              var long_url = $(&#39;#main-form&#39;).find(&quot;#url&quot;).val();
+              get_short_url(long_url, login, api_key, function(resp) {
+					$(&quot;.g-recaptcha&quot;).remove();
+					$(&quot;.alert-info&quot;).css(&quot;display&quot;,&quot;&quot;);
+					$(&quot;.alert-info&quot;).html(&quot;<span>&quot;+resp.url+&quot;</span><a class='btn btn-default' id='copy-compact-link'>Copy</a>&quot;);
+					
+                    var doExist = false;
+                    for (var i = 0; i &lt; readList.length; i++) {
+                        if (readList[i].url == resp.url) {
+                            doExist = true;
+                            var keyPos = i;
+                        }
+                    }
+					if (doExist != true) {
+						readList[readCount] = { longUrl: resp.long_url, url: resp.url };
+                        readCount++;
+                    }
+
+                    var makeString = JSON.stringify(readList);
+                    localStorage.setItem(&quot;ListSaved&quot;, makeString);
+                    localStorage.setItem(&quot;saveCount&quot;, readCount);
+					location.href = location.href + &quot;?currentURL=&quot; + resp.url;
+              });
+            }
+		}
+	return false;
+});
+
+function get_short_url(long_url, login, api_key, func)
+{
+    $.getJSON(
+        &quot;https://api-ssl.bitly.com/v3/shorten&quot;, 
+        { 
+            &quot;format&quot;: &quot;json&quot;,
+            &quot;apiKey&quot;: api_key,
+            &quot;login&quot;: login,
+            &quot;longUrl&quot;: long_url
+        },
+        function(response)
+        {
+            func(response.data);
+        }
+    );
+}
+function copyTextToClipboard(text,element) {
+	var textArea = document.createElement(&quot;textarea&quot;);
+	textArea.style.position = &#39;fixed&#39;;
+	textArea.style.top = 0;
+	textArea.style.left = 0;
+	textArea.style.width = &#39;2em&#39;;
+	textArea.style.height = &#39;2em&#39;;
+	textArea.style.padding = 0;
+	textArea.style.border = &#39;none&#39;;
+	textArea.style.outline = &#39;none&#39;;
+	textArea.style.boxShadow = &#39;none&#39;;
+	textArea.style.background = &#39;transparent&#39;;
+	textArea.value = text;
+	document.body.appendChild(textArea);
+
+	if(navigator.userAgent.match(/ipad|iphone/i)){
+		var range = document.createRange();  
+		range.selectNodeContents(textArea);
+		var selection = window.getSelection();
+		selection.removeAllRanges();
+		selection.addRange(range);
+		textArea.setSelectionRange(0, 999999);
+	}else{
+		textArea.select();
+	}
+	
+	try {
+		var successful = document.execCommand(&#39;copy&#39;);
+		var msg = successful ? &#39;successful&#39; : &#39;unsuccessful&#39;;
+		$(&#39;.copy-compact-link&#39;).text(&#39;Copy&#39;);
+		element.text(&#39;Đã copy&#39;);
+	} catch (err) {
+		console.log(&#39;Oops, unable to copy&#39;);
+	}
+	document.body.removeChild(textArea);
+}
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async='async' src='https://www.googletagmanager.com/gtag/js?id=UA-xxxxxxxx-xx'/>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag(&#39;js&#39;, new Date());
+
+  gtag(&#39;config&#39;, &#39;UA-xxxxxxxx-xx&#39;);
+</script>
+
+</html>
