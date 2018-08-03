@@ -1,0 +1,8 @@
+<div class="wk-reading-list">
+    <div class="wk-grid-md">
+        <h1>Reading List</h1>
+        <div class="wk-reading-paper"></div>
+        <div class="wk-sep">. . .</div>
+        <p class="wk-note">** The posts saved in reading list will disappear, if the application cache is cleaned or if you just choose to go cross browser or incognito. Happy Listing :)</p>
+    </div>
+  </div>
