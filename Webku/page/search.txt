@@ -1,0 +1,23 @@
+<div class="wk-grid-lg">
+    <div class="wk-search-paper wk-new-search">
+        <h3>Search</h3>
+        <div class="wk-search-brick">
+            <div class="wk-sb-lt">
+                <span class="wk-dropdown">
+                <span class="wk-search-dropdown wk-dropdown-label">All Categories</span>
+                <ul class="wk-dropdown-list">
+                    <li class="wk-drop-model">Dev</li>
+                    <li class="wk-drop-model">Docs</li>
+                    <li class="wk-drop-model">Lab</li>
+                    <li class="wk-drop-model">Articles</li>
+                </ul>
+                </span>
+            </div>
+            <div class="wk-sb-rt">
+                <form action='/search' role="search" method="get" _lpchecked="1">
+                  <input type="text" value="" name="q" required="required" autofocus="" placeholder="eg. Kamen Rider Zi-O" onfocus="this.value=this.value">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
