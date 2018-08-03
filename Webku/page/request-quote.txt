@@ -1,0 +1,376 @@
+<div class="wk-grid-md">
+<div class="ask-feature-wrapper">
+<div class="ask-feature-box">
+<h3>
+Request Quote</h3>
+<!--Loader-->
+            <br />
+<div class="skeleton-loader">
+<div class="skl-strip skl-strip-aa">
+</div>
+<div class="skl-strip skl-strip-ab">
+</div>
+<div class="skl-strip skl-strip-ac">
+</div>
+<div class="skl-strip skl-strip-ad">
+</div>
+<div class="skl-strip skl-strip-ae">
+</div>
+<div class="skl-strip skl-strip-af">
+</div>
+<div class="skl-strip skl-strip-ag">
+</div>
+</div>
+<!--//Loader-->
+            <br />
+<div class="uv_load" id="uv_top_message">
+</div>
+<script async="async" id="15b35fb37362f05b35fb3736398">
+                var uvFormLoadAction;
+                uvFormLoadAction = function(e) {
+                    var topMessage = document.getElementById('uv_top_message');
+                    topMessage.className = '';
+                    topMessage.innerHTML = '';
+                    var formNode = document.createElement('form');
+                    var formName = "Request-Quote-Zedge-Fansub";
+                    setAttributes(formNode, {
+                        "name": formName,
+                        "id": "contact-form",
+                        "method": "post",
+                        "class": "uv_form",
+                        "enctype": "multipart/form-data"
+                    });
+
+                    formNode.appendChild(generateElement('name'));
+
+                    formNode.appendChild(generateElement('email'));
+
+                    formNode.appendChild(generateElement('message'));
+
+                    var formPart = document.createElement("input");
+                    setAttributes(formPart, {
+                        "type": "hidden",
+                        "name": "blogID",
+                        "value": "7794095570627528918",
+                        "id": "blogID",
+                    });
+
+
+                    formNode.appendChild(formPart);
+                    var formPart = document.createElement("input");
+                    setAttributes(formPart, {
+                        "type": "hidden",
+                        "name": "__csrf",
+                        "value": "3615b5f390997025"
+                    });
+                    formNode.appendChild(formPart);
+                    var formPart = document.createElement("button");
+                    setAttributes(formPart, {
+                        "type": "submit",
+                        "id": "uv_submit1",
+                        "name": "submit1",
+                        "class": "btn btn-md btn-info",
+                    });
+                    formPart.innerHTML = 'Create Ticket';
+                    formNode.appendChild(formPart);
+
+                    function asyncAction(formNode, b) {
+                        var that = document.getElementById("15b35fb37362f05b35fb3736398");
+                        that.parentNode.insertBefore(formNode, that.nextSibling);
+                        b();
+                    };
+
+                    asyncAction(formNode, function() {
+                        var btn = document.getElementById('uv_submit1');
+                        btn.addEventListener('click', function(event) {
+                            document.getElementById('uv_top_message').innerHTML = '';
+                            form = document.querySelector('form[name=' + formName + ']');
+                            // if(form.checkValidity()) {
+                            event.preventDefault();
+                            if (isValidForm(form)) {
+                                btn.disabled = true;
+                                btn.style.cursor = 'not-allowed';
+                                var path = "https://www.blogger.com/contact-form.do";
+                                path = path.replace('replaceHash', "15b35fb37362f05b35fb3736398");
+                                form.method = 'post';
+                                form.enctype = 'multipart/form-data';
+                                form.action = path;
+                                //form.submit();
+                                submit();
+
+                            }
+                            // }
+                        });
+                        var visibleNames = {
+                            'email': 'Email',
+                            'name': 'Name',
+                            'message': 'Your Message'
+                        };
+                        var inputs = document.querySelectorAll('.uv_form input,.uv_form textarea');
+                        for (i = 0; i < inputs.length; i++) {
+                            var input = inputs[i];
+                            // input.addEventListener('blur', function(event) {
+                            //  target = event.target;
+                            //  var error = [];
+
+                            //  if(-1 != ['email', 'message', 'subject', 'name'].indexOf(target.name) && !target.value) {
+                            //   targetName = (target.name && 'undefined' != typeof(visibleNames[target.name.toLowerCase()]) ) ? visibleNames[target.name.toLowerCase()] : target.name;
+                            //   error[target.id] = errorMessage('required', targetName);
+                            //  } else if(target.name == 'email') {
+                            //   if(!validateEmail(target.value)) {
+                            //    error[target.id] = errorMessage('email', target.value);
+                            //   }
+                            //  }
+                            //  showError(error, target);
+                            // });  
+                        }
+                    });
+
+                    if (document.getElementById('uv_type')) {
+                        document.getElementById('uv_type').addEventListener('change', function(event) {
+                            selectedVal = this.options[this.selectedIndex].value;
+                            if ((allDependent = document.getElementsByClassName('dependent')) && (len = allDependent.length)) {
+                                for (i = 0; i < len; i++) {
+                                    allDependent[i].style.display = 'none';
+                                }
+                            }
+                            if ((dependent = document.getElementsByClassName('dependency' + selectedVal)) && (leng = dependent.length)) {
+                                for (j = 0; j < leng; j++) {
+                                    dependent[j].style.display = 'block';
+                                }
+                            }
+                        });
+                    }
+
+                    if (document.querySelector('.uv_flash .close')) {
+                        document.querySelector('.uv_flash .close').addEventListener('click', function() {
+                            if (flashmsg = document.querySelector('.uv_flash')) {
+                                flashmsg.remove();
+                            }
+                        });
+                    }
+
+                    function isValidForm(form) {
+                        var error = [];
+                        fieldName = 'name';
+                        formElement = document.getElementById('uv_' + fieldName);
+                        if (fieldName === 'name') {
+                            name = 'Name';
+                        } else if (fieldName === 'email') {
+                            name = 'Email';
+                        } else if (fieldName === 'message') {
+                            name = 'Your Message';
+                        } else {
+                            name = fieldName;
+                        }
+                        if (!formElement.value) {
+                            error[formElement.id] = errorMessage('required', name);
+                        } else if (fieldName == 'email') {
+                            if (!validateEmail(formElement.value))
+                                error[formElement.id] = errorMessage('email', formElement.value);
+                        }
+                        fieldName = 'email';
+                        formElement = document.getElementById('uv_' + fieldName);
+                        if (fieldName === 'name') {
+                            name = 'Name';
+                        } else if (fieldName === 'email') {
+                            name = 'Email';
+                        } else if (fieldName === 'message') {
+                            name = 'Your Message';
+                        } else {
+                            name = fieldName;
+                        }
+                        if (!formElement.value) {
+                            error[formElement.id] = errorMessage('required', name);
+                        } else if (fieldName == 'email') {
+                            if (!validateEmail(formElement.value))
+                                error[formElement.id] = errorMessage('email', formElement.value);
+                        }
+                        fieldName = 'message';
+                        formElement = document.getElementById('uv_' + fieldName);
+                        if (fieldName === 'name') {
+                            name = 'Name';
+                        } else if (fieldName === 'email') {
+                            name = 'Email';
+                        } else if (fieldName === 'message') {
+                            name = 'Your Message';
+                        } else {
+                            name = fieldName;
+                        }
+                        if (!formElement.value) {
+                            error[formElement.id] = errorMessage('required', name);
+                        } else if (fieldName == 'email') {
+                            if (!validateEmail(formElement.value))
+                                error[formElement.id] = errorMessage('email', formElement.value);
+                        }
+
+                       
+                        
+                        showError(error);
+                        return Object.size(error) == 0 ? true : false;
+
+                    };
+
+                    function validateEmail(email) {
+                        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                        return re.test(email);
+                    }
+
+                    function errorMessage(type, value) {
+                        var validation = {
+                            'required': 'Please Enter %value%',
+                            'regex': 'This Field Value is not Valid',
+                            'number': '%value% is not a number',
+                            'maxNo': 'Number should not be greater than %value%',
+                            'minNo': 'Number should not be less than %value%',
+                            'email': '%value% is not a valid email',
+                            'allowed-domain': '%value% is not one of allowed Domains',
+                            'restict-domain': '%value% falls into restricted Category',
+                            'requiredRadio': ' Please Select a Value',
+                            'url': 'Provide a valid url(with protocol)',
+                            'time': 'Please provide Time value in format HH:MM',
+                            'date': 'Please provide Date value in format yyyy-mm-dd',
+                            'date-time': 'Please provide date-time value in format yyyy-mm-dd HH:MM',
+                        };
+                        return validation[type].replace("%value%", value);;
+                    }
+
+                    function showError(error, singleTarget = false) {
+                        shownErrors = document.getElementsByClassName('uv_show-error');
+                        if (!singleTarget) {
+                            while (shownErrors.length > 0) {
+                                shownErrors[0].parentNode.className = shownErrors[0].parentNode.className.replace('uv_has_error', '');
+                                shownErrors[0].parentNode.removeChild(shownErrors[0]);
+                            }
+                        } else {
+                            singleTarget.parentNode.className = singleTarget.parentNode.className.replace('uv_has_error', '');
+                            targetIdString = singleTarget.id ? '#' + singleTarget.id + ' + ' : null;
+                            if (document.querySelector(targetIdString + '.uv_show-error')) {
+                                singleTarget.parentNode.removeChild(document.querySelector(targetIdString + '.uv_show-error'));
+                            }
+                        }
+
+                        for (id in error) {
+                            var childNode = document.createElement("div");
+                            childNode.className = 'uv_show-error';
+                            childNode.innerHTML = error[id];
+                            var node = document.getElementById(id);
+                            if (node) {
+                                node.parentNode.insertBefore(childNode, node.nextSibling);
+                                var parentNode = node.parentNode;
+                                parentNode.className = parentNode.className.concat(' uv_has_error');
+                            }
+                        }
+                    };
+
+                    function generateElement(fieldName) {
+                        var field = document.createElement("div");
+                        field.className = 'uv_form-group';
+                        if (fieldName == 'message') {
+                            field.appendChild(createLabel('Message'));
+                            var formElement = document.createElement("textarea");
+                            setAttributes(formElement, {
+                                "name": "message",
+                                "class": "uv_form-control",
+                                "id": 'uv_' + fieldName,
+                                "required": "required"
+                            });
+                        } else {
+                            if (fieldName === 'name') {
+                                labelName = "Name";
+                            } else if (fieldName === 'email') {
+                                labelName = "Email";
+                            } else if (fieldName === 'subject') {
+                                labelName = "Subject";
+                            } else {
+                                labelName = fieldName;
+                            }
+                            field.appendChild(createLabel(labelName));
+                            var formElement = document.createElement("input");
+                            setAttributes(formElement, {
+                                "type": "text",
+                                "name": fieldName,
+                                "id": 'uv_' + fieldName,
+                                "class": "uv_form-control",
+                                "required": "required"
+                            });
+                        }
+                        field.appendChild(formElement);
+                        var infoArray = {
+                            'name': 'Customer full name',
+                            'email': 'Customer email address',
+                            'type': 'Choose ticket type',
+                            'subject': 'Ticket subject',
+                            'message': 'Ticket query message',
+                        };
+
+                        return field;
+
+                        function createLabel(name) {
+                            var label = document.createElement("label");
+                            setAttributes(label, {
+                                "for": name,
+                                "class": "uv_required"
+                            });
+                            label.innerHTML = name;
+                            return label;
+                        }
+                    };
+
+                    function setAttributes(el, attrs) {
+                        for (var key in attrs) {
+                            el.setAttribute(key, attrs[key]);
+                        }
+                    };
+
+                    Object.size = function(obj) {
+                        var size = 0,
+                            key;
+                        for (key in obj) {
+                            if (obj.hasOwnProperty(key)) size++;
+                        }
+                        return size;
+                    };
+                    try {
+                        var uvEvt = new Event("uvFormLoaded");
+                        window.dispatchEvent(uvEvt);
+                    } catch (e) {}
+                };
+                window.addEventListener('load', function() {
+                    if (typeof(uvFormLoadAction) === 'function') {
+                        uvFormLoadAction();
+                    }
+                });
+            </script>
+            <script type="text/javascript">
+                function submit(){
+                    var $form = $("#contact-form");
+                    var data = {};
+                    data.name = $form.find(":input[name='name']").val();
+                    data.email = $form.find(":input[name='email']").val();
+                    data.message = $form.find(":input[name='message']").val();
+                    data.blogID = $form.find(":input[name='blogID']").val();
+                    $form.append('<a href="javascript:void(0)" class="btn btn-md btn-info" style="background: #f03535;" id="status">Sending...</a>');
+                    $form.find("#status").hide().fadeIn(1000);
+                    $.ajax({
+                        url: $form.attr("action"),
+                        type: $form.attr("method"),
+                        data: data,
+                        dataType: "text",
+                        success: function(resp){
+                           resp = JSON.parse(resp);
+                           console.log(resp.details.emailSentStatus);
+                           if (resp.details.emailSentStatus) {
+                                $form.find("#status").html("Your message has been sent.").hide().fadeIn(1000);
+                           }else{
+                                $form.find("#status").html("Message could not be sent. Please try again later.").fadeOut(50).fadeIn(1000);;
+                           }
+                        }
+                    });
+                    return false; 
+                }
+                
+            </script>
+        </div>
+</div>
+</div>
